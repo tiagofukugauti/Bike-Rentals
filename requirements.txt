@@ -1,0 +1,4 @@
+pandas
+numpy
+Flask==2.0.1
+datetime
