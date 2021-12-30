@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho Prático - Módulo 3</title>
+
+    <!-- RESET -->
+		<link rel="stylesheet" type="text/css" href="/static/reset.css">
+
+		<!-- GOOGLE FONTS -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@600&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;600&display=swap" rel="stylesheet">
+
+		<!-- Estilos Personalizados -->
+		<link rel="stylesheet" type="text/css" href= "/static/layout.css">   
+</head>
+    <header>
+			<div><img src="https://images.unsplash.com/photo-1533788179956-82e8a027c962?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80" width="825" height="250" alt="Banner"></div>
+    </header>
+    <body>
+      <section>
+        <form class='filtraDados' action="/filtros" method="get">
+        <div class="primeiraLinha">
+          <div id= "card1">
+            <h1>Year</h1>
+							  <select class="selecao">
+								  <option class="opcao" value="default">Igual a</option>
+                  <option class="opcao">Entre</option>
+                  <option class="opcao">Maior/Igual</option>
+                  <option class="opcao">Maior que</option>
+                  <option class="opcao">Menor/Igual</option>
+                  <option class="opcao">Menor que</option>
+                  <option class="opcao">Em</option>
+							  </select>
+                <input class="opcao" type="text" name="ano" id="ano" placeholder="Enter a value">
+          </div>
+          <div id= "card2">
+            <h1>Month</h1>
+							  <select class="selecao">
+								  <option class="opcao" value="default">Igual a</option>
+                  <option class="opcao">Entre</option>
+                  <option class="opcao">Maior/Igual</option>
+                  <option class="opcao">Maior que</option>
+                  <option class="opcao">Menor/Igual</option>
+                  <option class="opcao">Menor que</option>
+                  <option class="opcao">Em</option>
+							  </select>
+                <input class="opcao" type="text" name="mes" id="mes" placeholder="Enter a value">
+          </div>
+          <div class="box-botao">
+            <input class="botao" type="submit" value= "Filtrar">
+          </div>
+        </div>
+        </form>
+        <div class="segundaLinha">
+          <div id= "logotipo"><img src="https://cdn-icons-png.flaticon.com/512/3198/3198344.png" alt="logo" width="100px" height="100px">
+            <div class= "destaque">
+            <h2 id= "score1">Locações</h2>
+            <h1>{{total[0]["total"]}}</h1>
+            </div>
+          </div>
+          <div id= "score-card">
+            <div class= "destaque">
+              <h2 id= "score2">Locações em 2011</h2>
+							<h1>{{total[1]["total"][0]}}</h1>
+            </div>
+            <div class= "destaque">
+              <h2 id= "score3">Locações em 2012</h2>
+							<h1>{{total[2]["total"][0]}}</h1>
+            </div>
+          </div>
+          <div id= "tabela1" class="tabela1">
+            <h2>Média de Locações por Estação</h2>
+            <table>
+            <tr>
+              <th>Pos</th> 
+              <th>Season</th> 
+              <th>Média de Locações</th>
+            </tr>
+            {% for estacao in total_estacao %}
+            <tr>
+              <td>{{estacao["indice"]}}.</td>
+              <td>{{estacao["season"]}}</td>
+              <td>{{estacao["media"]}}</td>
+            </tr>
+            {% endfor %}
+            </table>
+          </div>
+       </div>
+       <div class="terceiraLinha">
+        <div id= "tabela2" class="tabela2">
+          <h2>Horário com Maiores Médias de Locação</h2>
+          <table>
+          <tr>
+            <th>Pos</th> 
+            <th>Hour</th> 
+            <th>Média de Locações</th>
+          </tr>
+          {% for resultado in total_top4 %}
+            <tr>
+              <td>{{resultado["indice"]}}.</td>
+              <td>{{resultado["hour"]}}</td>
+              <td>{{resultado["media"]}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+        <div id= "tabela3" class="tabela3">
+          <h2>Horário com Menores Médias de Locação</h2>
+          <table>
+          <tr>
+            <th>Pos</th> 
+            <th>Hour</th> 
+            <th>Média de Locações</th>
+          </tr>
+          {% for resultado in total_bottom4 %}
+          <tr>
+            <td>{{resultado["indice"]}}.</td>
+            <td>{{resultado["hour"]}}</td>
+            <td>{{resultado["media"]}}</td>
+          </tr>
+          {% endfor %}
+          </table>
+        </div>
+     </div>
+      </section>
+    </body>

@@ -1,0 +1,241 @@
+@import url('tabelas.css');
+* {
+  box-sizing: border-box;
+}
+
+html {
+	margin: 0;
+  padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 62.5%;
+	}
+
+body {
+	height: 100vh;
+	background: white;
+	width: 100%;
+}
+
+header {
+  width: 100%;
+}
+
+header div {
+	background-color: white;
+  margin-top: 10px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+	display: flex;
+	color: white;
+  max-width: 85rem;
+  min-width: auto;
+  align-items: center;
+  }
+
+  h1 {
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
+  section {
+    display: block;
+    margin-top: 10px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 85rem;
+    min-width: auto;
+    align-items: center;
+  }
+
+   .botao {
+		background-color: lightgrey;
+		width: 100px;
+    height: 30px;
+		font-weight: bold;
+    margin-top: 30px;
+	}
+
+  .botao:hover {
+		background-color:yellow;
+	}
+
+  .primeiraLinha {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  #card1 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem #888888
+  }
+
+  .selecao {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 30px;
+    border: white;
+    border-bottom: 1.2px solid gray;
+  }
+
+  #card2 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem #888888
+  }
+ 
+  .opcao {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    font-size: 12px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 10px;
+    border: white;
+    border-bottom: 1.2px solid gray;
+  }
+
+  .segundaLinha {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .segundaLinha h1{
+    font-size: 22px;
+  }
+
+  .segundaLinha h2{
+    font-size: 17px;
+    color: grey;
+    font-weight: bold;
+  }
+
+  .terceiraLinha {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .terceiraLinha h2{
+    font-size: 17px;
+    color: grey;
+    font-weight: bold;
+  }
+
+  #logotipo {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  #score-card {
+    margin-top: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  #score1 {
+    margin-top: 5px;
+  }
+
+  .destaque:hover {
+		background-color:rgb(245, 245, 245);
+    box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem #888888;
+	}
+  
+  #score3 {
+    margin-top: 40px;
+  }
+
+  #tabela1 {
+    margin-top: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+  }
+
+  #tabela2 {
+    margin-top: 10px;
+    padding-left: 30px;
+  }
+
+  #tabela3 {
+    margin-top: 10px;
+    margin-left: 35px;
+    padding-left: 30px;
+  }
+
+  table {
+    background: #ffffff;
+    margin-top: 10px;
+    width: 100%;
+    line-height: 1rem;
+    border-collapse: collapse;
+  }
+  
+  table th {
+    background-color:lightgray;
+  }
+
+  table th:first-child {
+    text-align: center;
+  }
+  
+  table tr td:first-child {
+    text-align: center;
+  }
+  
+  table tbody tr:hover {
+    background-color: yellow;
+  }
+  
+  table tbody tr:first-child {
+    font-weight: bold;
+  }
+  
+  table th,
+  table td {
+    padding: 1rem;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid lightgray;
+  }
+
+  @media (max-width: 768px) {
+	nav {
+		width: 30vw;
+		height: auto;
+	}
+	article {
+	  width: 70vw;
+	  height: auto;
+	}
+
+	footer {
+		width: 100%;
+		height: auto;
+	}
+}
+
+  @media (max-width: 425px) {
+	nav, article {
+	  width: 100%;
+	  height: auto;
+	}
+}
+
